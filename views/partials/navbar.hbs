@@ -1,0 +1,59 @@
+<div class='container py-3'>
+	<header>
+		<div class='flex items-center justify-center w-full'>
+			<a href='/' class='d-flex align-items-center text-dark text-decoration-none'>
+				<img height="50" src="/logo-e.png" alt="">
+				<span class='fs-4'>Eventbook</span>
+			</a>
+
+			<nav class='d-inline-flex mt-2 mt-md-0 ms-md-auto'>
+
+				{{#if isProducts}}
+				<a class='me-3 py-2 text-dark font-bold' href='/products'>Events</a>
+				{{else}}
+				<a class='me-3 py-2 text-dark ' href='/products'>Events</a>
+				{{/if}}
+
+				{{#if isAdd}}
+				<a class='me-3 py-2 text-dark font-bold' href='/add'>Create event</a>
+				{{else}}
+				<a class='me-3 py-2 text-dark ' href='/add'>Create event</a>
+				{{/if}}
+
+				<div class='btn-group' role='group' aria-label='Basic mixed styles example'>
+					{{#if token}}
+					<button title="exit" type='button' class='btn btn-danger active' style="background-color: red; border:none; display: flex;">
+						<a class='text-light text-decoration-none' href='/logout' style="display: flex; align-items: center; justify-content: center; gap:10px;">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+								stroke="currentColor" class="w-5 h-5">
+								<path stroke-linecap="round" stroke-linejoin="round"
+									d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+							</svg>
+						</a>
+					</button>
+					{{else}}
+					{{#if isLogin}}
+					<button type='button' class='btn btn-primary bg-red-700 active'>
+						<a class='text-light text-decoration-none' href='/login'>Log in</a>
+					</button>
+					{{else}}
+					<button type='button' class='btn btn-primary'>
+						<a class='text-light text-decoration-none' href='/login'>Log in</a>
+					</button>
+					{{/if}}
+
+					{{#if isRegister}}
+					<button type='button' class='btn btn-success active'>
+						<a class='text-light text-decoration-none' href='/register'>Register</a>
+					</button>
+					{{else}}
+					<button type='button' class='btn btn-success'>
+						<a class='text-light text-decoration-none' href='/register'>Register</a>
+					</button>
+					{{/if}}
+					{{/if}}
+				</div>
+			</nav>
+		</div>
+	</header>
+</div>
